@@ -1,7 +1,7 @@
 $maxWidth: 1440;
 $minWidth: 375;
-$containerWidth: 1313;
-$paddingContainer: 26;
+$containerWidth: 1240;
+$paddingContainer: 24;
 $maxWidthContainer: $containerWidth + $paddingContainer * 2;
 
 // $laptop: 1199.98px;
@@ -11,5 +11,7 @@ $maxWidthContainer: $containerWidth + $paddingContainer * 2;
 
 $titleColor: #151411;
 $paragraphColor: #afadb5;
-$secondaryColor:#FFB23F;
-$primaryColor:#518581
+$secondaryColor: #ffb23f;
+$primaryColor: #518581;
+$primaryColorHover: #8baeab;
+$lineColor: #f3f3f3;
