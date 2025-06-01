@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "EudoxusSans";
+    src:
+        url("/src/fonts/EudoxusSans-Regular-BF659b6cb1d4714.woff2") format("woff2"),
+        url("/src/fonts/EudoxusSans-Regular-BF659b6cb1d4714.ttf") format("ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "EudoxusSans";
+    src:
+        url("/src/fonts/EudoxusSans-Medium-BF659b6cb1c14cb.woff2") format("woff2"),
+        url("/src/fonts/EudoxusSans-Medium-BF659b6cb1c14cb.ttf") format("ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "EudoxusSans";
+    src:
+        url("/src/fonts/EudoxusSans-Bold-BF659b6cb1408e5.woff2") format("woff2"),
+        url("/src/fonts/EudoxusSans-Bold-BF659b6cb1408e5.ttf") format("ttf");
+    font-weight: 700;
+}

@@ -1,0 +1,40 @@
+@use "sass:math";
+@import "fonts";
+@import "reset";
+@import "variables";
+@import "mixins";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "EudoxusSans", sans-serif;
+    font-size: toRem(18);
+    line-height: 1.8;
+    font-weight: 500;
+    color: $paragraphColor;
+    @media (max-width: toEm(767.98)) {
+        font-size: toRem(14);
+    }
+}
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper > main {
+    flex-grow: 1;
+}
+
+[class$="__container"] {
+    max-width: toRem($maxWidthContainer);
+    padding-inline: toRem($paddingContainer);
+    margin: 0 auto;
+}
+
+@import "common";
+@import "header";
+@import "main";
+@import "footer";

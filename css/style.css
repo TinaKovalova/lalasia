@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "EudoxusSans";
+  src: url("/src/fonts/EudoxusSans-Regular-BF659b6cb1d4714.woff2") format("woff2"), url("/src/fonts/EudoxusSans-Regular-BF659b6cb1d4714.ttf") format("ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "EudoxusSans";
+  src: url("/src/fonts/EudoxusSans-Medium-BF659b6cb1c14cb.woff2") format("woff2"), url("/src/fonts/EudoxusSans-Medium-BF659b6cb1c14cb.ttf") format("ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "EudoxusSans";
+  src: url("/src/fonts/EudoxusSans-Bold-BF659b6cb1408e5.woff2") format("woff2"), url("/src/fonts/EudoxusSans-Bold-BF659b6cb1408e5.ttf") format("ttf");
+  font-weight: 700;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+address {
+  font-style: normal;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input[type=datetime-local]::-webkit-calendar-picker-indicator {
+  background: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "EudoxusSans", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  font-weight: 500;
+  color: #afadb5;
+}
+@media (max-width: 47.99875em) {
+  body {
+    font-size: 0.875rem;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+[class$=__container] {
+  max-width: 85.3125rem;
+  padding-inline: 1.625rem;
+  margin: 0 auto;
+}
