@@ -1,8 +1,12 @@
 @use "sass:math";
-@import "fonts";
-@import "reset";
-@import "variables";
-@import "mixins";
+@use "fonts";
+@use "reset";
+@use "variables" as *;
+@use "mixins";
+@use "common";
+@use "header";
+@use "main";
+@use "footer";
 
 html {
     scroll-behavior: smooth;
@@ -10,12 +14,12 @@ html {
 
 body {
     font-family: "EudoxusSans", sans-serif;
-    font-size: toRem(18);
+    font-size: 18px;
     line-height: 1.8;
     font-weight: 500;
     color: $paragraphColor;
-    @media (max-width: toEm(767.98)) {
-        font-size: toRem(14);
+    @media (max-width: 767.98px) {
+        font-size: 14px;
     }
 }
 .wrapper {
@@ -29,12 +33,7 @@ body {
 }
 
 [class$="__container"] {
-    max-width: toRem($maxWidthContainer);
-    padding-inline: toRem($paddingContainer);
+    max-width: 1288px; //1240px
+    padding-inline: 24px;
     margin: 0 auto;
 }
-
-@import "common";
-@import "header";
-@import "main";
-@import "footer";

@@ -1,10 +1,11 @@
+@use "variables" as *;
 .header {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
     width: 100%;
-    border-bottom: toRem(2) solid $lineColor;
+    border-bottom: 2px solid $lineColor;
     &::before {
         content: "";
         position: absolute;
@@ -19,24 +20,24 @@
     // .header__container
 
     &__container {
-        padding-block: toRem(39);
+        padding-block: 39px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        column-gap: toRem(25);
-   
-        @media (max-width: toEm(991.98)) {
-            padding-block: toRem(20);
+        column-gap: 25px;
+
+        @media (max-width: 991.98px) {
+            padding-block: 20px;
         }
     }
 }
 .logo {
-    flex: 0 1 toRem(130);
-    max-width: toRem(130);
+    flex: 0 1 130px;
+    max-width: 130px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: toRem(12);
+    column-gap: 12px;
     color: $titleColor;
 
     // .logo__icon
@@ -52,9 +53,9 @@
         width: 58.461538%; /* 76/130 */
         aspect-ratio: 76 / 19;
     }
-    @media (max-width: toEm(991.98)) {
-        max-width: toRem(99);
-        column-gap: toRem(9);
+    @media (max-width: 991.98px) {
+        max-width: 99px;
+        column-gap: 9px;
         &__icon {
             aspect-ratio: 32 / 32;
         }
@@ -73,7 +74,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        gap: toRem(15) toRem(60);
+        gap: 15px 60px;
         .menu-burger & {
             flex-direction: column;
         }
@@ -98,13 +99,13 @@
 .actions {
     display: flex;
     align-items: center;
-    gap: toRem(15) toRem(24);
+    gap: 15px 24px;
 
     // .actions__item
 
     &__item {
-        width: toRem(30);
-        height: toRem(30);
+        width: 30px;
+        height: 30px;
         transition: background-color 0.4s ease-out;
         &--cart {
             background-color: $titleColor;
@@ -123,13 +124,13 @@
 }
 .burger-btn {
     position: relative;
-    width: toRem(30);
-    height: toRem(30);
-    padding: toRem(3);
+    width: 30px;
+    height: 30px;
+    padding: 3px;
     display: none;
     flex-direction: column;
     justify-content: center;
-    row-gap: toRem(4);
+    row-gap: 4px;
 
     &::after,
     &::before {
@@ -139,11 +140,11 @@
     &::before,
     span {
         width: 100%;
-        height: toRem(2);
-        border-radius: toRem(4);
+        height: 2px;
+        border-radius: 4px;
         background-color: $titleColor;
     }
-    @media (max-width: toEm(991.98)) {
+    @media (max-width: 991.98px) {
         display: flex;
     }
 }
@@ -155,13 +156,13 @@
     transform: translateY(-100%);
     width: 100%;
     // min-height: 100svh;
-    padding-block-start: toRem(150);
-    padding-block-end: toRem(30);
-    padding-inline: toRem(30);
+    padding-block-start: 150px;
+    padding-block-end: 30px;
+    padding-inline: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    row-gap: toRem(40);
+    row-gap: 40px;
     transition: transform 0.5s ease-out;
     background-color: #ffffff;
 

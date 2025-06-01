@@ -1,4 +1,4 @@
-import "../scss/style.scss";
+import "/src/scss/style.scss";
 window.addEventListener("load", () => {
 
     const navigation = document.querySelector(".navigation");

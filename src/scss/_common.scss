@@ -1,14 +1,15 @@
+@use "variables" as *;
 .button {
-    padding-inline: toRem(26);
-    padding-block-start: toRem(13);
-    padding-block-end: toRem(14);
+    padding-inline: 26px;
+    padding-block-start: 13px;
+    padding-block-end: 14px;
     font-weight: 700;
     line-height: 1.3;
     color: #ffffff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-width: toRem(2);
+    border-width: 2px;
     border-style: solid;
     transition: all 0.4s;
     &.button--green {
@@ -16,13 +17,13 @@
         border-color: $primaryColor;
     }
     &.button--icon {
-        padding-inline: toRem(30);
-        padding-block-end: toRem(13);
-        column-gap: toRem(18);
+        padding-inline: 30px;
+        padding-block-end: 13px;
+        column-gap: 18px;
         &::after {
             content: "";
-            width: toRem(25);
-            height: toRem(11);
+            width: 25px;
+            height: 11px;
             background: url("../images/icons/icons/arrow-right-long.svg") center/100% auto no-repeat;
         }
     }
