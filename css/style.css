@@ -438,7 +438,7 @@ input[type=number] {
   transition: -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
-  background-color: #ffffff;
+  background-color: #f3f3f3;
 }
 .menu-burger._active {
   -webkit-transform: translateY(0);
@@ -546,7 +546,9 @@ input[type=number] {
 }
 .hero__image-wrapper {
   width: 100%;
-  height: 38.709677%; /* 480/1240 */
+  aspect-ratio: 1240/480;
+  min-height: 160px;
+  overflow: hidden;
 }
 @media (min-width: 767.98px) {
   .hero__image-wrapper {
@@ -554,8 +556,8 @@ input[type=number] {
   }
 }
 .hero__image {
-  width: 100%;
-  min-height: 160px;
+  min-width: 100%;
+  height: 100%;
   aspect-ratio: 1240/480;
 }
 
