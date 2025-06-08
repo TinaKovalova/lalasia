@@ -189,6 +189,16 @@ input[type=number] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 20px;
+}
+.section-header__title-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   row-gap: 14px;
 }
 .section-header__subtitle {
@@ -197,9 +207,6 @@ input[type=number] {
 .section-header__title {
   font-size: 44px;
   color: #151411;
-}
-.section-header__title:not(:last-child) {
-  margin-bottom: 6px;
 }
 .section-header--main .section-header__title {
   font-size: 64px;
@@ -476,6 +483,11 @@ input[type=number] {
 .hero__header {
   max-width: 796px;
 }
+@media (min-width: 767.98px) {
+  .hero__header .section-header__title-block:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
 .hero__header .section-header__title {
   max-width: 724px;
   position: relative;
@@ -520,11 +532,6 @@ input[type=number] {
   .hero__header .section-header__title .section-header__title-decorated-part::after {
     width: 24px;
     height: 24px;
-  }
-}
-@media (min-width: 991.98px) {
-  .hero__header .section-header__title:not(:last-child) {
-    margin-bottom: 16px;
   }
 }
 .hero__header .section-header__text {

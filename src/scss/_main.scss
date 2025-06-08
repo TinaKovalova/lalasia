@@ -22,11 +22,17 @@
 
     &__header {
         max-width: 796px;
+        & .section-header__title-block {
+            @media (min-width: $mobile) {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
 
         & .section-header__title {
             max-width: 724px;
             position: relative;
-
             &::before {
                 content: "";
                 width: 250px;
@@ -34,7 +40,6 @@
                 position: absolute;
                 top: 100%;
                 right: 100%;
-                // transform-origin: right top;
                 transform: translate(30px, -60px) rotate(-67.19deg);
                 background: url("/src/images/icons/line-arrow-spiral-down.svg") center / 100% no-repeat;
             }
@@ -52,7 +57,6 @@
             }
             @media (max-width: $tablet) {
                 max-width: 80vw; /* 300/375 */
-
                 &::before {
                     top: 20%;
                     width: 84px;
@@ -62,11 +66,6 @@
                 & .section-header__title-decorated-part::after {
                     width: 24px;
                     height: 24px;
-                }
-            }
-            @media (min-width: $tablet) {
-                &:not(:last-child) {
-                    margin-bottom: 16px;
                 }
             }
         }

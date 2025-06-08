@@ -47,8 +47,13 @@
 .section-header {
     display: flex;
     flex-direction: column;
-    row-gap: 14px;
-
+    row-gap: 20px;
+    //section-header__title-block
+    &__title-block {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+    }
     // .section-header__subtitle
 
     &__subtitle {
@@ -60,9 +65,6 @@
     &__title {
         font-size: 44px;
         color: $titleColor;
-        &:not(:last-child) {
-            margin-bottom: 6px;
-        }
         .section-header--main & {
             font-size: 64px;
         }
