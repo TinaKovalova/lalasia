@@ -27,7 +27,7 @@
         justify-content: space-between;
         column-gap: 25px;
 
-        @media (max-width: 991.98px) {
+        @media (max-width: $tablet) {
             padding-block: 20px;
         }
     }
@@ -91,7 +91,7 @@
     // .navigation__link
 
     &__link {
-        transition: color 0.4s ease-out;
+        transition: color 0.3s ease-out;
         @media (any-hover: hover) {
             &:hover {
                 color: $primaryColor;
@@ -109,7 +109,7 @@
     &__item {
         width: 30px;
         height: 30px;
-        transition: background-color 0.4s ease-out;
+        transition: background-color 0.3s ease-out;
         &--cart {
             background-color: $titleColor;
             mask: url("../images/icons/icons/bag.svg") center/100% no-repeat;
@@ -147,7 +147,7 @@
         border-radius: 4px;
         background-color: $titleColor;
     }
-    @media (max-width: 991.98px) {
+    @media (max-width: $tablet) {
         display: flex;
     }
 }
