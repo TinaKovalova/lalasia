@@ -21,6 +21,7 @@ window.addEventListener("load", () => {
   if (document.querySelector(".popular__slider.swiper")) {
     const popularProductsSwiper = new Swiper(".popular__slider.swiper", {
       slidesPerView: "auto",
+      spaceBetween: 20,
       centerInsufficientSlides: true,
       freeMode: true,
       grabCursor: true,
@@ -39,7 +40,6 @@ window.addEventListener("load", () => {
 
       breakpoints: {
         320: {
-          spaceBetween: 20,
           centeredSlides: true,
           centeredSlidesBounds: true,
         },
