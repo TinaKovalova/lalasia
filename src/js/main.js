@@ -50,8 +50,7 @@ window.addEventListener("load", () => {
       },
     });
     }
-    
-    if (document.querySelector(".testimonials__swiper.swiper")) {
+  if (document.querySelector(".testimonials__swiper.swiper")) {
       const testimonialSwiper = new Swiper(".testimonials__swiper.swiper", {
         spaceBetween: 30,
         grabCursor: true,
@@ -93,6 +92,15 @@ window.addEventListener("load", () => {
         },
       });
     }
+  if (document.querySelector(".articles__swiper.swiper")) {
+    var articlesSwiper = new Swiper(".articles__swiper.swiper", {
+      navigation: {
+        nextEl: ".articles__swiper-button-next",
+        prevEl: ".articles__swiper-button-prev",
+      },
+    });
+  }
+    
     
 });
 

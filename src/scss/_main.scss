@@ -581,8 +581,6 @@
     // .testimonials__swiper
 
     &__swiper.swiper {
-        .swiper-wrapper {
-        }
         & .swiper-slide {
             @media (min-width: $tablet) {
                 width: 545px;
@@ -670,5 +668,123 @@
             height: 24px;
             background: url("/src/images/icons/star.svg") center/100% no-repeat;
         }
+    }
+}
+
+//articles
+.articles {
+    // .articles__container
+
+    &__container {
+    }
+
+    // .articles__header
+
+    &__header {
+    }
+
+    // .articles__slider-wrapper
+
+    &__slider-wrapper {
+    }
+
+    // .articles__swiper
+
+    &__swiper {
+    }
+
+    // .articles__swiper-buttons
+
+    &__swiper-buttons {
+        display: inline-flex;
+        position: relative;
+        z-index: 3;
+        margin-top: -20px;
+    }
+    &__swiper-button-prev,
+    &__swiper-button-next {
+        width: 70px;
+        height: 70px;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            content: "";
+            width: 28px;
+            height: 28px;
+        }
+    }
+    // .articles__swiper-button-prev
+
+    &__swiper-button-prev {
+        rotate: -180deg;
+        background-color: #ffffff;
+        &::before {
+            background-color: $primaryColor;
+            mask: url("/src/images/icons/icons/arrow-right-long.svg") center/100% no-repeat;
+        }
+    }
+
+    // .articles__swiper-button-next
+
+    &__swiper-button-next {
+        background-color: $primaryColor;
+        &::before {
+            background-color: #ffffff;
+            mask: url("/src/images/icons/icons/arrow-right-long.svg") center/100% no-repeat;
+        }
+    }
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.article-slide-card {
+    // .article-slide-card__image-wrapper
+
+    &__image-wrapper {
+    }
+
+    // .article-slide-card__image
+
+    &__image {
+    }
+
+    // .article-slide-card__info
+
+    &__info {
+    }
+
+    // .article-slide-card__category
+
+    &__category {
+    }
+
+    // .article-slide-card__category-link
+
+    &__category-link {
+    }
+
+    // .article-slide-card__title
+
+    &__title {
+    }
+
+    // .article-slide-card__title-link
+
+    &__title-link {
+    }
+
+    // .article-slide-card__text
+
+    &__text {
+    }
+
+    // .article-slide-card__link
+
+    &__link {
     }
 }
