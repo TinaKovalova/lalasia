@@ -101,3 +101,127 @@
         }
     }
 }
+
+.product {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    @media (max-width: $mobile) {
+        row-gap: 12px;
+    }
+    // .product__image-link
+
+    &__image-link {
+        width: 100%;
+        height: 360px;
+        overflow: hidden;
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+        @media (any-hover: hover) {
+            &:hover .product__image {
+                transform: scale(1.03);
+            }
+        }
+        @media (max-width: $mobile) {
+            height: 194px;
+            &:not(:last-child) {
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    // .product__image
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 394 / 360;
+        transition: transform 0.4s ease-out;
+        @media (max-width: $mobile) {
+            aspect-ratio: 220 / 194;
+        }
+    }
+    //product__info
+    &__info {
+        flex-grow: 1;
+    }
+    &__title,
+    &__category {
+        font-weight: 700;
+        line-height: 1.3;
+        transition: color 0.3s ease-out;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $secondaryColor;
+            }
+        }
+    }
+    // .product__category
+
+    &__category {
+        &:not(:last-child) {
+            margin-bottom: 14px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 12px;
+            line-height: 1.8;
+            &:not(:last-child) {
+                margin-bottom: 6px;
+            }
+        }
+    }
+
+    // .product__category-link
+
+    &__category-link {
+    }
+
+    // .product__title
+
+    &__title {
+        font-size: 26px;
+
+        letter-spacing: 0.26px;
+        color: $titleColor;
+        &:not(:last-child) {
+            margin-bottom: 6px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 16px;
+            letter-spacing: 0.16px;
+            line-height: 1.45;
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    // .product__title-link
+
+    &__title-link {
+    }
+
+    // .product__discription
+
+    &__discription {
+        @media (max-width: $mobile) {
+            font-size: 14px;
+        }
+    }
+
+    // .product__price
+
+    &__price {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: $titleColor;
+        margin-top: auto;
+        @media (max-width: $mobile) {
+            font-size: 16px;
+            line-height: 1.45;
+        }
+    }
+}

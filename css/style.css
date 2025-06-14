@@ -238,6 +238,125 @@ input[type=number] {
   }
 }
 
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 18px;
+}
+@media (max-width: 767.98px) {
+  .product {
+    row-gap: 12px;
+  }
+}
+.product__image-link {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+}
+.product__image-link:not(:last-child) {
+  margin-bottom: 8px;
+}
+@media (any-hover: hover) {
+  .product__image-link:hover .product__image {
+    -webkit-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+}
+@media (max-width: 767.98px) {
+  .product__image-link {
+    height: 194px;
+  }
+  .product__image-link:not(:last-child) {
+    margin-bottom: 2px;
+  }
+}
+.product__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 394/360;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+}
+@media (max-width: 767.98px) {
+  .product__image {
+    aspect-ratio: 220/194;
+  }
+}
+.product__info {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.product__title, .product__category {
+  font-weight: 700;
+  line-height: 1.3;
+  -webkit-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+@media (any-hover: hover) {
+  .product__title:hover, .product__category:hover {
+    color: #ffb23f;
+  }
+}
+.product__category:not(:last-child) {
+  margin-bottom: 14px;
+}
+@media (max-width: 767.98px) {
+  .product__category {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .product__category:not(:last-child) {
+    margin-bottom: 6px;
+  }
+}
+.product__title {
+  font-size: 26px;
+  letter-spacing: 0.26px;
+  color: #151411;
+}
+.product__title:not(:last-child) {
+  margin-bottom: 6px;
+}
+@media (max-width: 767.98px) {
+  .product__title {
+    font-size: 16px;
+    letter-spacing: 0.16px;
+    line-height: 1.45;
+  }
+  .product__title:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}
+@media (max-width: 767.98px) {
+  .product__discription {
+    font-size: 14px;
+  }
+}
+.product__price {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #151411;
+  margin-top: auto;
+}
+@media (max-width: 767.98px) {
+  .product__price {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -804,6 +923,79 @@ input[type=number] {
     -webkit-padding-after: 18px;
             padding-block-end: 18px;
   }
+}
+
+.popular {
+  padding-block: 90px;
+}
+@media (max-width: 767.98px) {
+  .popular {
+    padding-block: 50px;
+  }
+}
+.popular__container:not(:last-child) {
+  margin-bottom: 50px;
+}
+.popular__header {
+  max-width: 656px;
+  margin: 0 auto;
+}
+.popular__slider-wrapper {
+  position: relative;
+}
+.popular__slider.swiper {
+  height: auto;
+}
+.popular__slider.swiper .swiper-slide {
+  width: 394px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+}
+@media (max-width: 767.98px) {
+  .popular__slider.swiper .swiper-slide {
+    width: 220px;
+  }
+}
+.popular__swiper-button-prev, .popular__swiper-button-next {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(21, 20, 17, 0.6);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  translate: 0 -50%;
+}
+.popular__swiper-button-prev::before, .popular__swiper-button-next::before {
+  content: "";
+  width: 46.15%; /* 24/52 */
+  height: 46.15%; /* 24/52 */
+  background: url("/src/images/icons/icons/arrow-right.svg") center/100% no-repeat;
+}
+@media (min-width: 991.98px) {
+  .popular__swiper-button-prev, .popular__swiper-button-next {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.popular__swiper-button-prev {
+  left: 50px;
+}
+.popular__swiper-button-next {
+  right: 50px;
+  rotate: 180deg;
 }
 
 html {
