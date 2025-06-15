@@ -1,7 +1,8 @@
 import Swiper from "swiper";
-import {Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 import "/src/scss/style.scss";
 
 window.addEventListener("load", () => {
@@ -94,9 +95,28 @@ window.addEventListener("load", () => {
     }
   if (document.querySelector(".articles__swiper.swiper")) {
     var articlesSwiper = new Swiper(".articles__swiper.swiper", {
+      modules: [EffectFade, Autoplay, Navigation],
+      slidersPerView: 1,
+      spaceBetween: 30,
+      grabCursor: true,
+      loop: true,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      virtualTranslate: true,
+      speed: 2500,
       navigation: {
         nextEl: ".articles__swiper-button-next",
         prevEl: ".articles__swiper-button-prev",
+      },
+      breakpoints: {
+        992: {},
       },
     });
   }
@@ -112,7 +132,6 @@ window.addEventListener("resize", () => {
 });
 
 function setScrollMarginTop(basedOnElement) {
-  console.log(basedOnElement.clientHeight);
   document.documentElement.style.setProperty(
     "--scroll-margin-top",
     `${basedOnElement.clientHeight}px`

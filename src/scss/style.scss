@@ -38,4 +38,7 @@ body {
     max-width: 1288px; //1240px
     padding-inline: 24px;
     margin: 0 auto;
+    @media (max-width: 374.98px) {
+        padding-inline: 15px;
+    }
 }
