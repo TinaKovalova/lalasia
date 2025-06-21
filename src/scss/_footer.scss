@@ -1,0 +1,126 @@
+@use "variables" as *;
+.footer {
+    // .footer__container
+
+    &__container {
+        padding-block-start: 80px;
+        padding-block-end: 88px;
+        border-top: 1.5px solid #ece4de;
+        color: $titleColor;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px 20px;
+        @media (max-width: $mobile) {
+            padding-block-start: 20px;
+            padding-block-end: 24px;
+        }
+    }
+
+    // .footer__info
+
+    &__info {
+        flex-basis: 432px;
+        padding-block-start: 6px;
+        @media (max-width: $tablet) {
+            flex-grow: 1;
+        }
+        @media (max-width: $mobile) {
+            color: $paragraphColor;
+        }
+    }
+
+    // .footer__logo
+
+    &__logo {
+        &:not(:last-child) {
+            margin-bottom: 36px;
+        }
+        @media (max-width: $mobile) {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // .footer__about
+
+    &__about {
+    }
+
+    // .footer__menu
+
+    &__menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(2.08vw, 6.94vw, 100px);
+        @media (max-width: $tablet) {
+            flex-grow: 1;
+        }
+    }
+
+    // .footer__menu-item
+
+    &__menu-item {
+        @media (max-width: $tablet) {
+            flex-grow: 1;
+        }
+    }
+
+    // .footer__menu-title
+
+    &__menu-title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.3;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        @media (max-width: $mobile) {
+            &:not(:last-child) {
+                margin-bottom: 14px;
+            }
+        }
+        @media (max-width: $mobile) {
+            font-size: 16px;
+        }
+    }
+
+    // .footer__menu-list
+
+    &__menu-list {
+        @media (max-width: $mobile) {
+            color: $paragraphColor;
+        }
+    }
+
+    // .footer__menu-list-item
+
+    &__menu-list-item {
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+    }
+
+    // .footer__menu-list-link
+
+    &__menu-list-link {
+        transition: color 0.3s ease-out;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+    }
+}
+.logo {
+    // .logo__icon
+
+    &__icon {
+    }
+
+    // .logo__text
+
+    &__text {
+    }
+}
