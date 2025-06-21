@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Autoplay, Navigation, EffectFade } from "swiper/modules";
+import { Autoplay, Navigation, EffectFade, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
@@ -117,6 +117,31 @@ window.addEventListener("load", () => {
       },
       breakpoints: {
         992: {},
+      },
+    });
+  }
+  if (document.querySelector(".banner__products-swiper.swiper")) {
+    const bannerSwiper = new Swiper(".banner__products-swiper.swiper", {
+      modules: [Autoplay, Navigation, Pagination, EffectFade],
+      loop: true,
+      speed: 1800,
+      // autoplay: {
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      //   pauseOnMouseEnter: true,
+      // },
+      grabCursor: true,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".banner__swiper-button-next",
+        prevEl: ".banner__swiper-button-prev",
       },
     });
   }

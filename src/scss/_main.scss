@@ -830,3 +830,120 @@
         }
     }
 }
+
+//intro
+
+.intro {
+    // .intro__container
+
+    &__container {
+        padding-block-start: 100px;
+        padding-block-end: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+        @media (max-width: $mobile) {
+            padding-block-start: 50px;
+            padding-block-end: 30px;
+        }
+    }
+
+    // .intro__header
+
+    &__header {
+        max-width: 600px;
+    }
+
+    // .intro__banner
+
+    &__banner {
+        min-width: 100%;
+    }
+}
+
+.banner {
+    &.banner--100vw {
+        width: 100vw;
+    }
+    position: relative;
+
+    // .banner__products-swiper
+    &__products-swiper.swiper {
+        position: static;
+        & .swiper-slide {
+            display: flex;
+            height: auto;
+            & > * {
+                width: 100%;
+                min-height: 34.72vw;
+            }
+            @media (max-width: $smallMobile) {
+                & > * {
+                    min-height: 180px;
+                }
+            }
+        }
+        & .swiper-pagination {
+            position: absolute;
+            display: flex;
+            column-gap: 10px;
+            justify-content: center;
+            z-index: 3;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 22px;
+            & .swiper-pagination-bullet {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #ffffff;
+                opacity: 0.4;
+            }
+            & .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                opacity: 1;
+            }
+            @media (max-width: $tablet) {
+                display: none;
+            }
+        }
+    }
+
+    // .banner__swiper-button-prev
+    &__swiper-button-prev,
+    &__swiper-button-next {
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        width: 52px;
+        height: 52px;
+        translate: 0 -50%;
+        border-radius: 50%;
+        background: rgba(21, 20, 17, 0.6);
+        backdrop-filter: blur(7.5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            content: "";
+            width: 50%;
+            height: 50%;
+            background: url("/src/images/icons/icons/arrow-right.svg") center/100% no-repeat;
+        }
+        @media (max-width: $tablet) {
+            display: none;
+        }
+    }
+
+    &__swiper-button-prev {
+        left: 40px;
+    }
+
+    // .banner__swiper-button-next
+
+    &__swiper-button-next {
+        rotate: 180deg;
+        right: 40px;
+    }
+}
