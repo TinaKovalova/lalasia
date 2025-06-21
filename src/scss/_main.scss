@@ -793,3 +793,38 @@
         }
     }
 }
+
+//discount
+
+.discount {
+    // .discount__container
+
+    &__container {
+        padding-block-start: 90px;
+        padding-block-end: 88px;
+        @media (max-width: $mobile) {
+            padding-block: 50px;
+        }
+    }
+    // .discount__header
+
+    &__header.section-header {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px 40px;
+
+        // .section-header__title-block
+        & .section-header__title-block {
+            max-width: 775px;
+        }
+        & .button {
+            flex-shrink: 0;
+            padding-inline: 28px;
+            @media (max-width: $smallMobile) {
+                width: 100%;
+            }
+        }
+    }
+}

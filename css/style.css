@@ -1654,6 +1654,46 @@ input[type=number] {
   }
 }
 
+.discount__container {
+  -webkit-padding-before: 90px;
+          padding-block-start: 90px;
+  -webkit-padding-after: 88px;
+          padding-block-end: 88px;
+}
+@media (max-width: 767.98px) {
+  .discount__container {
+    padding-block: 50px;
+  }
+}
+.discount__header.section-header {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px 40px;
+}
+.discount__header.section-header .section-header__title-block {
+  max-width: 775px;
+}
+.discount__header.section-header .button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding-inline: 28px;
+}
+@media (max-width: 479.98px) {
+  .discount__header.section-header .button {
+    width: 100%;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   --scroll-margin-top: 0;

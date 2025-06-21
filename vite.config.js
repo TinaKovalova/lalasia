@@ -1,16 +1,14 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
+import injectHTML from "vite-plugin-html-inject";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const path = require("path");
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
+  plugins: [
+    injectHTML(),
+  ],
   build: {
     rollupOptions: {
       input: {
