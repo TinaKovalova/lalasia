@@ -125,11 +125,11 @@ window.addEventListener("load", () => {
       modules: [Autoplay, Navigation, Pagination, EffectFade],
       loop: true,
       speed: 1800,
-      // autoplay: {
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      //   pauseOnMouseEnter: true,
-      // },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
       grabCursor: true,
       effect: "fade",
       fadeEffect: {
