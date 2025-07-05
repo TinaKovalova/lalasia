@@ -15,6 +15,7 @@ export default defineConfig({
         services: resolve(__dirname, "nested/services.html"),
         article: resolve(__dirname, "nested/article.html"),
         about: resolve(__dirname, "nested/about.html"),
+        product_details: resolve(__dirname, "nested/product-details.html"),
       },
     },
   },

@@ -84,3 +84,38 @@
         }
     }
 }
+
+%round-swiper-button {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(21, 20, 17, 0.6);
+    backdrop-filter: blur(7.5px);
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    translate: 0 -50%;
+    transition: background-color 0.3s ease-out;
+    &::before {
+        content: "";
+        width: 46.15%; /* 24/52 */
+        height: 46.15%; /* 24/52 */
+        background: url("/src/images/icons/icons/arrow-right.svg") center/ 100% no-repeat;
+    }
+    @media (min-width: $tablet) {
+        display: flex;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            background: rgba(21, 20, 17, 0.3);
+        }
+    }
+    &[class$="swiper-button-next"] {
+        &::before {
+            rotate: 180deg;
+        }
+    }
+}

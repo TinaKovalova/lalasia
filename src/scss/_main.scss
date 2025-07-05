@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "mixins";
 .hero {
     // .hero__container
 
@@ -281,6 +282,7 @@
         & .swiper-slide {
             width: 394px;
             display: flex;
+            flex-direction: column;
             height: auto;
             @media (max-width: $mobile) {
                 width: 220px;
@@ -291,27 +293,7 @@
     // .popular__swiper-button-prev
     &__swiper-button-prev,
     &__swiper-button-next {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        background: rgba(21, 20, 17, 0.6);
-        backdrop-filter: blur(7.5px);
-        position: absolute;
-        z-index: 3;
-        top: 50%;
-        translate: 0 -50%;
-        &::before {
-            content: "";
-            width: 46.15%; /* 24/52 */
-            height: 46.15%; /* 24/52 */
-            background: url("/src/images/icons/icons/arrow-right.svg") center/ 100% no-repeat;
-        }
-        @media (min-width: $tablet) {
-            display: flex;
-        }
+        @extend %round-swiper-button;
     }
     &__swiper-button-prev {
         left: 50px;
@@ -321,7 +303,6 @@
 
     &__swiper-button-next {
         right: 50px;
-        rotate: 180deg;
     }
 }
 
@@ -837,29 +818,9 @@
         position: absolute;
         top: 50%;
         z-index: 3;
-        width: 52px;
-        height: 52px;
-        translate: 0 -50%;
-        border-radius: 50%;
-        background: rgba(21, 20, 17, 0.6);
-        backdrop-filter: blur(7.5px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.3s ease-out;
-        &::before {
-            content: "";
-            width: 50%;
-            height: 50%;
-            background: url("/src/images/icons/icons/arrow-right.svg") center/100% no-repeat;
-        }
+        @extend %round-swiper-button;
         @media (max-width: $tablet) {
             display: none;
-        }
-        @media (any-hover: hover) {
-            &:hover {
-                background: rgba(21, 20, 17, 0.3);
-            }
         }
     }
 
@@ -870,7 +831,6 @@
     // .banner__swiper-button-next
 
     &__swiper-button-next {
-        rotate: 180deg;
         right: 40px;
     }
 }
@@ -1047,58 +1007,5 @@
                 flex-basis: auto;
             }
         }
-    }
-
-    // .total-product__collection
-
-    &__collection {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 80px;
-
-        @media (max-width: $tablet) {
-            row-gap: 30px;
-        }
-        @media (max-width: $mobile) {
-            & .product {
-                & .product__category,
-                & .product__discription {
-                    font-size: 12px;
-                }
-                & .product__title,
-                & .product__price {
-                    font-size: 14px;
-                }
-            }
-        }
-    }
-
-    // .total-product__collection-body
-
-    &__collection-body {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-        gap: 30px 29px;
-        & .product__title-link,
-        & .product__discription {
-            max-width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-        @media (max-width: $tablet) {
-            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-            gap: 17px 15px;
-        }
-        @media (max-width: $mobile) {
-            grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
-        }
-    }
-
-    // .total-product__collection-pagination
-
-    &__collection-pagination {
     }
 }
