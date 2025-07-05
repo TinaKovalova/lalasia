@@ -5,12 +5,17 @@
     &__container {
         padding-block-start: 80px;
         padding-block-end: 88px;
-        border-top: 1.5px solid #ece4de;
         color: $titleColor;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 30px 20px;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 1.5px;
+            background-color: #ece4de;
+        }
         @media (max-width: $mobile) {
             padding-block-start: 20px;
             padding-block-end: 24px;
