@@ -766,6 +766,7 @@
         @media (max-width: $mobile) {
             padding-block-start: 50px;
             padding-block-end: 30px;
+            row-gap: 30px;
         }
     }
 
@@ -845,6 +846,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: background-color 0.3s ease-out;
         &::before {
             content: "";
             width: 50%;
@@ -853,6 +855,11 @@
         }
         @media (max-width: $tablet) {
             display: none;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background: rgba(21, 20, 17, 0.3);
+            }
         }
     }
 
@@ -1014,24 +1021,30 @@
     }
 
     // .total-product__sort-button
-    &__sort-button.button {
+    &__sort-button {
         @extend .total-product__filter-btn;
-        align-self: flex-start;
-        flex-basis: 139px;
-        padding-inline: 18.5px;
-        padding-block: 7.8px;
-        border-color: #f9f9f9;
-        border-width: 1.5px;
-        line-height: 1.8;
         &.button.button--icon {
+            align-self: flex-start;
+            flex-basis: 139px;
+            padding-inline: 18.5px;
+            padding-block: 7.8px;
+            border-color: #f9f9f9;
+            border-width: 1.5px;
+            line-height: 1.8;
             &::after {
                 content: "";
                 width: 24px;
                 height: 24px;
                 background: url("../images/icons/icons/sort.svg") center/100% auto no-repeat;
+                transition: transform 0.3s ease-out;
+            }
+            &._ascending {
+                &::after {
+                    transform: rotateX(180deg);
+                }
             }
             @media (max-width: $mobile) {
-                width: auto;
+                flex-basis: auto;
             }
         }
     }
@@ -1043,8 +1056,21 @@
         flex-direction: column;
         align-items: center;
         row-gap: 80px;
+
         @media (max-width: $tablet) {
             row-gap: 30px;
+        }
+        @media (max-width: $mobile) {
+            & .product {
+                & .product__category,
+                & .product__discription {
+                    font-size: 12px;
+                }
+                & .product__title,
+                & .product__price {
+                    font-size: 14px;
+                }
+            }
         }
     }
 

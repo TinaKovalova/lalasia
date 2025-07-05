@@ -11,6 +11,7 @@ window.addEventListener("load", () => {
   const menuBurger = document.querySelector(".menu-burger");
   const burgerBtn = document.querySelector(".burger-btn ");
   const header = document.querySelector(".header");
+  const sortButton = document.querySelector(".total-product__sort-button");
   if (header) {
     setScrollMarginTop(header);
   }
@@ -19,6 +20,9 @@ window.addEventListener("load", () => {
     e.target.classList.toggle("_active");
     menuBurger?.classList.toggle("_active");
   });
+  sortButton?.addEventListener("click", () => {
+    sortButton.classList.toggle("_ascending");
+  })
   if (document.querySelector(".popular__slider.swiper")) {
     const popularProductsSwiper = new Swiper(".popular__slider.swiper", {
       slidesPerView: "auto",

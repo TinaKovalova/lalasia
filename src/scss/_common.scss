@@ -719,17 +719,25 @@
             content: "";
             width: 24px;
             height: 24px;
-            background-color: $paragraphColor;
+            background-color: $titleColor;
             mask: url("/src/images/icons/icons/arrow-right.svg") center / 100% no-repeat;
+            transition: background-color 0.3s ease-out;
         }
-        &._active {
+        &:disabled {
             &::before {
-                background-color: $titleColor;
+                background-color: $paragraphColor;
             }
         }
         @media (max-width: $mobile) {
             width: 28px;
             height: 32px;
+        }
+        @media (any-hover: hover) {
+            &:not(:disabled):hover {
+                &::before {
+                    background-color: $primaryColor;
+                }
+            }
         }
     }
     &__button-prev {
@@ -766,14 +774,27 @@
         // line-height: 1.3;
         color: $titleColor;
         font-weight: 500;
-        border: 1.5px solid $lineColor;
+        border: 1.5px solid transparent;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition:
+            border-color 0.3s ease-out,
+            color 0.3s ease-out;
+        &:not(._dots) {
+            border-color: $lineColor;
+        }
         &._active {
             background-color: $primaryColor;
             color: #ffffff;
             border-color: $primaryColor;
+        }
+
+        @media (any-hover: hover) {
+            &:not(:disabled):not(._active):hover {
+                border-color: $primaryColor;
+                color: $primaryColor;
+            }
         }
         @media (max-width: $mobile) {
             width: 32px;
