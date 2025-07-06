@@ -5,7 +5,10 @@
 
     &__container {
         padding-block: 100px;
-        @media (max-width: $mobile) {
+        & > *:not(:last-child) {
+            margin-bottom: 50px;
+        }
+        @media (max-width: $tablet) {
             padding-block-start: 50px;
             padding-block-end: 83px;
         }
@@ -24,31 +27,62 @@
     // .product-details__related-info-title
 
     &__related-info-title {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0.32px;
+        color: $titleColor;
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 18px;
+            &:not(:last-child) {
+                margin-bottom: 23px;
+            }
+        }
     }
 }
 .product-info {
     display: flex;
     gap: 50px;
+    @media (max-width: $tablet) {
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
     // .product-info__image-wrapper
 
     &__image-wrapper {
-        flex: 0 0 600px;
-        height: 600px;
+        flex: 0 1 600px;
+        min-width: 50%;
+        aspect-ratio: 600 / 600;
         overflow: hidden;
+        @media (max-width: $tablet) {
+            max-width: 450px;
+        }
+        @media (max-width: $mobile) {
+            max-width: 327px;
+            aspect-ratio: 327 / 327;
+        }
     }
 
     // .product-info__image
 
     &__image {
-        min-width: 100%;
-        min-height: 100%;
+        width: 100%;
+        height: 100%;
         aspect-ratio: 600 /600;
         object-fit: cover;
+        object-position: 50% 50%;
     }
 
     // .product-info__body
 
     &__body {
+        flex: 1 1 590px;
     }
 
     // .product-info__header
@@ -57,6 +91,12 @@
         margin-bottom: 30px;
         & > *:not(:last-child) {
             margin-bottom: 10px;
+        }
+        @media (max-width: $tablet) {
+            margin-bottom: 20px;
+            & > *:not(:last-child) {
+                margin-bottom: 4px;
+            }
         }
     }
 
@@ -83,6 +123,11 @@
     & > *:last-child {
         margin-bottom: 0;
     }
+    @media (max-width: $tablet) {
+        & > * {
+            margin-bottom: 16px;
+        }
+    }
     // .product-purchaise__pallet
 
     &__pallet {
@@ -96,6 +141,11 @@
         color: $titleColor;
         &:not(:last-child) {
             margin-bottom: 20px;
+        }
+        @media (max-width: $tablet) {
+            &:not(:last-child) {
+                margin-bottom: 6px;
+            }
         }
     }
 
@@ -122,6 +172,10 @@
         transition:
             scale 0.3s ease-out,
             opacity 0.3s ease-out;
+        @media (max-width: $mobile) {
+            width: 30px;
+            height: 30px;
+        }
     }
 
     // .product-purchaise__color
@@ -141,6 +195,9 @@
         margin-bottom: 30px;
         & > p {
             display: inline;
+        }
+        @media (max-width: $tablet) {
+            margin-bottom: 16px;
         }
     }
 
@@ -181,6 +238,13 @@
         line-height: 1.3;
         color: $titleColor;
         margin-bottom: 50px;
+        @media (max-width: $tablet) {
+            margin-bottom: 30px;
+            font-size: 34px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 24px;
+        }
     }
 
     // .product-purchaise__actions
@@ -188,70 +252,14 @@
     &__actions {
         display: flex;
         // flex-wrap: wrap;
-        gap: 20px;
+        gap: 12px 20px;
         & .button {
             flex-basis: 50%;
-            // flex-grow: 1;
+            flex-grow: 1;
             min-width: max-content;
         }
-    }
-}
-
-.button {
-}
-.button--green {
-}
-.button--border {
-}
-.product-collection {
-    // .product-collection__body
-
-    &__body {
-    }
-}
-.product {
-    // .product__image-link
-
-    &__image-link {
-    }
-
-    // .product__image
-
-    &__image {
-    }
-
-    // .product__info
-
-    &__info {
-    }
-
-    // .product__category
-
-    &__category {
-    }
-
-    // .product__category-link
-
-    &__category-link {
-    }
-
-    // .product__title
-
-    &__title {
-    }
-
-    // .product__title-link
-
-    &__title-link {
-    }
-
-    // .product__discription
-
-    &__discription {
-    }
-
-    // .product__price
-
-    &__price {
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+        }
     }
 }

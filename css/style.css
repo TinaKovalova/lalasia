@@ -1227,7 +1227,10 @@ input[type=number] {
 .product-details__container {
   padding-block: 100px;
 }
-@media (max-width: 767.98px) {
+.product-details__container > *:not(:last-child) {
+  margin-bottom: 50px;
+}
+@media (max-width: 991.98px) {
   .product-details__container {
     -webkit-padding-before: 50px;
             padding-block-start: 50px;
@@ -1235,25 +1238,76 @@ input[type=number] {
             padding-block-end: 83px;
   }
 }
+.product-details__related-info-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.32px;
+  color: #151411;
+}
+.product-details__related-info-title:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media (max-width: 767.98px) {
+  .product-details__related-info-title {
+    font-size: 18px;
+  }
+  .product-details__related-info-title:not(:last-child) {
+    margin-bottom: 23px;
+  }
+}
+
 .product-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 50px;
 }
+@media (max-width: 991.98px) {
+  .product-info {
+    gap: 30px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
 .product-info__image-wrapper {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 600px;
-          flex: 0 0 600px;
-  height: 600px;
+      -ms-flex: 0 1 600px;
+          flex: 0 1 600px;
+  min-width: 50%;
+  aspect-ratio: 600/600;
   overflow: hidden;
 }
+@media (max-width: 991.98px) {
+  .product-info__image-wrapper {
+    max-width: 450px;
+  }
+}
+@media (max-width: 767.98px) {
+  .product-info__image-wrapper {
+    max-width: 327px;
+    aspect-ratio: 327/327;
+  }
+}
 .product-info__image {
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 600/600;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+.product-info__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 590px;
+          flex: 1 1 590px;
 }
 .product-info__header {
   margin-bottom: 30px;
@@ -1261,11 +1315,24 @@ input[type=number] {
 .product-info__header > *:not(:last-child) {
   margin-bottom: 10px;
 }
+@media (max-width: 991.98px) {
+  .product-info__header {
+    margin-bottom: 20px;
+  }
+  .product-info__header > *:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}
 .product-purchaise > * {
   margin-bottom: 20px;
 }
 .product-purchaise > *:last-child {
   margin-bottom: 0;
+}
+@media (max-width: 991.98px) {
+  .product-purchaise > * {
+    margin-bottom: 16px;
+  }
 }
 .product-purchaise__pallet-title {
   font-weight: 800;
@@ -1274,6 +1341,11 @@ input[type=number] {
 }
 .product-purchaise__pallet-title:not(:last-child) {
   margin-bottom: 20px;
+}
+@media (max-width: 991.98px) {
+  .product-purchaise__pallet-title:not(:last-child) {
+    margin-bottom: 6px;
+  }
 }
 .product-purchaise__color-list {
   display: -webkit-box;
@@ -1293,6 +1365,12 @@ input[type=number] {
   -webkit-transition: scale 0.3s ease-out, opacity 0.3s ease-out;
   transition: scale 0.3s ease-out, opacity 0.3s ease-out;
 }
+@media (max-width: 767.98px) {
+  .product-purchaise__color-item {
+    width: 30px;
+    height: 30px;
+  }
+}
 .product-purchaise__color {
   width: 0;
   height: 0;
@@ -1306,6 +1384,11 @@ input[type=number] {
 }
 .product-purchaise__description > p {
   display: inline;
+}
+@media (max-width: 991.98px) {
+  .product-purchaise__description {
+    margin-bottom: 16px;
+  }
 }
 .product-purchaise__description-more {
   color: #518581;
@@ -1335,18 +1418,38 @@ input[type=number] {
   color: #151411;
   margin-bottom: 50px;
 }
+@media (max-width: 991.98px) {
+  .product-purchaise__price {
+    margin-bottom: 30px;
+    font-size: 34px;
+  }
+}
+@media (max-width: 767.98px) {
+  .product-purchaise__price {
+    font-size: 24px;
+  }
+}
 .product-purchaise__actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 20px;
+  gap: 12px 20px;
 }
 .product-purchaise__actions .button {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
+}
+@media (max-width: 767.98px) {
+  .product-purchaise__actions {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .popular__swiper-button-prev, .popular__swiper-button-next, .banner__swiper-button-prev, .banner__swiper-button-next {

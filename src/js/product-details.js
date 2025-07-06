@@ -6,22 +6,19 @@ window.addEventListener("load", () => {
 
     //temporary info list
     const colorsData = ["#151411", "#314443", "#C5A26E", "#D8DBE0"];
+
     for (let color of colorsData) {
-      colorList.insertAdjacentHTML(
-        "beforeend",
-        ` <label for="${color}" class="product-purchaise__color-item" data-color="${color}">
-                                            <input type="radio" id="${color}" value="${color}"
-                                                class="product-purchaise__color" name="color">
-                                        </label>`
-      );
+        const colorItem = document.createElement("label");
+        colorItem.classList.add("product-purchaise__color-item");
+        colorItem.style.backgroundColor = color;
+        colorItem.setAttribute("for", color);
+        colorItem.insertAdjacentHTML(
+          "beforeend",
+          `<input type="radio" id="${color}" value="${color}" class="product-purchaise__color" name="color">`
+        );
+        colorList.insertAdjacentElement("beforeend", colorItem);
     }
-    const colors = colorList?.querySelectorAll(".product-purchaise__color-item");
-    if (colors.length > 0) {
-        colors.forEach((element) => {
-            // const elementColor = element.dataset.color;
-            element.style.backgroundColor = element.dataset.color;
-        });
-    }
+  
     moreButton?.addEventListener("click", (e) => {
         console.log(e.target.innerText);
         const target = e.target;
