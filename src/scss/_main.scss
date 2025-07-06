@@ -697,19 +697,27 @@
     }
 }
 
-//discount
+//request
 
-.discount {
-    // .discount__container
+.request {
+    // .request__container
 
     &__container {
         padding-block-start: 90px;
         padding-block-end: 88px;
+        .request--services & {
+            padding-block-start: 180px;
+            padding-block-end: 86px;
+        }
         @media (max-width: $mobile) {
             padding-block: 50px;
+            .request--services & {
+                padding-block-start: 100px;
+                padding-block-end: 46px;
+            }
         }
     }
-    // .discount__header
+    // .request__header
 
     &__header.section-header {
         flex-wrap: wrap;
@@ -722,6 +730,10 @@
         & .section-header__title-block {
             max-width: 775px;
         }
+        .request--services & .section-header__title-block {
+            max-width: 394px;
+        }
+
         & .button {
             flex-shrink: 0;
             padding-inline: 28px;
@@ -744,17 +756,38 @@
         flex-direction: column;
         align-items: center;
         row-gap: 50px;
+        .intro--services & {
+            padding-block-end: 90px;
+        }
+        .intro--services &::after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $lineColor;
+        }
+
         @media (max-width: $mobile) {
             padding-block-start: 50px;
             padding-block-end: 30px;
             row-gap: 30px;
+            .intro--services & {
+                padding-block-end: 50px;
+            }
         }
+    }
+    // .intro__services
+
+    .intro--services &__services {
+        order: 1;
     }
 
     // .intro__header
 
     &__header {
         max-width: 600px;
+        .intro--services & {
+            max-width: 505px;
+        }
     }
 
     // .intro__banner
@@ -765,13 +798,13 @@
 }
 
 .banner {
-    &.banner--100vw {
+    .intro--products & {
         width: 100vw;
     }
     position: relative;
 
     // .banner__products-swiper
-    &__products-swiper.swiper {
+    .intro--products &__products-swiper.swiper {
         position: static;
         & .swiper-slide {
             display: flex;
@@ -829,9 +862,18 @@
     }
 
     // .banner__swiper-button-next
-
     &__swiper-button-next {
         right: 40px;
+    }
+    //banner__image
+    &__image {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1240 / 550;
+        object-fit: cover;
+        @media (max-width: $mobile) {
+            aspect-ratio: 327 / 200;
+        }
     }
 }
 
