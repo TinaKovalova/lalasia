@@ -766,16 +766,18 @@
             background-color: $lineColor;
         }
         .intro--article & {
-            padding-block-end: 90px;
+            padding-block-end: 40px;
         }
 
         @media (max-width: $mobile) {
             padding-block-start: 50px;
             padding-block-end: 30px;
             row-gap: 30px;
-            .intro--services &,
-            .intro--article & {
+            .intro--services & {
                 padding-block-end: 50px;
+            }
+            .intro--article & {
+                padding-block-end: 0;
             }
         }
     }
@@ -812,6 +814,9 @@
     // .banner__products-swiper
     & .swiper {
         position: static;
+        .intro--article & {
+            padding-block-end: 50px;
+        }
         & .swiper-slide {
             display: flex;
             height: auto;

@@ -152,14 +152,14 @@ window.addEventListener("load", () => {
   if (document.querySelector(".banner__articles-swiper.swiper")) {
     const bannerArticleSwiper = new Swiper(".banner__articles-swiper.swiper", {
       modules: [Autoplay, Navigation, Pagination],
-      // loop: true,
+      loop: true,
       speed: 1800,
       // autoplay: {
       //   delay: 3000,
       //   disableOnInteraction: false,
       //   pauseOnMouseEnter: true,
       // },
-      // grabCursor: true,
+      grabCursor: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,

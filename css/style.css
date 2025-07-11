@@ -872,12 +872,11 @@ input[type=number] {
      object-fit: cover;
 }
 .article-banner-card__body {
-  background-color: #ffffff;
   width: 87.096774%; /* 1080/1240 */
   padding-block: 47px;
   padding-inline: 40px;
   position: relative;
-  background: #ffffff;
+  background-color: #ffffff;
   -webkit-box-shadow: 0px 4px 40px 0px rgba(175, 173, 181, 0.2);
           box-shadow: 0px 4px 40px 0px rgba(175, 173, 181, 0.2);
 }
@@ -2485,8 +2484,8 @@ input[type=number] {
   background-color: #f3f3f3;
 }
 .intro--article .intro__container {
-  -webkit-padding-after: 90px;
-          padding-block-end: 90px;
+  -webkit-padding-after: 40px;
+          padding-block-end: 40px;
 }
 @media (max-width: 767.98px) {
   .intro__container {
@@ -2496,9 +2495,13 @@ input[type=number] {
             padding-block-end: 30px;
     row-gap: 30px;
   }
-  .intro--services .intro__container, .intro--article .intro__container {
+  .intro--services .intro__container {
     -webkit-padding-after: 50px;
             padding-block-end: 50px;
+  }
+  .intro--article .intro__container {
+    -webkit-padding-after: 0;
+            padding-block-end: 0;
   }
 }
 .intro--services .intro__services {
@@ -2524,6 +2527,10 @@ input[type=number] {
 }
 .banner .swiper {
   position: static;
+}
+.intro--article .banner .swiper {
+  -webkit-padding-after: 50px;
+          padding-block-end: 50px;
 }
 .banner .swiper .swiper-slide {
   display: -webkit-box;
