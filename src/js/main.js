@@ -160,10 +160,10 @@ window.addEventListener("load", () => {
       //   pauseOnMouseEnter: true,
       // },
       // grabCursor: true,
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
       navigation: {
         nextEl: ".banner__articles-swiper.swiper>.banner__swiper-button-next",
         prevEl: ".banner__articles-swiper.swiper>.banner__swiper-button-prev",
