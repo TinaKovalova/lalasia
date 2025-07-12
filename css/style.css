@@ -2531,6 +2531,18 @@ input[type=number] {
 .intro--products .banner {
   width: 100vw;
 }
+.intro--about .banner {
+  width: 100%;
+  min-height: 200px;
+  aspect-ratio: 1240/550;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 .banner .swiper {
   position: static;
 }
@@ -2551,7 +2563,7 @@ input[type=number] {
   min-height: 34.72vw;
 }
 .intro--article .banner .swiper .swiper-slide > * {
-  min-height: 38.194444vw; /* 550/1440 */
+  min-height: 38.19%; /* 550/1440 */
 }
 @media (max-width: 479.98px) {
   .intro--products .banner .swiper .swiper-slide > * {
@@ -2629,7 +2641,16 @@ input[type=number] {
     aspect-ratio: 327/200;
   }
 }
-
+.banner__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1240/550;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .total-product__container {
   display: -webkit-box;
   display: -ms-flexbox;

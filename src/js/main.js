@@ -159,11 +159,11 @@ window.addEventListener("load", () => {
       modules: [Autoplay, Navigation, Pagination],
       loop: true,
       speed: 2500,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      //   pauseOnMouseEnter: true,
+      // },
       grabCursor: true,
       pagination: {
         el: ".swiper-pagination",
