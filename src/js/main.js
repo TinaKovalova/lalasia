@@ -11,7 +11,9 @@ window.addEventListener("load", () => {
   const menuBurger = document.querySelector(".menu-burger");
   const burgerBtn = document.querySelector(".burger-btn ");
   const header = document.querySelector(".header");
-  const sortButton = document.querySelector(".total-product__sort-button");
+  const productsSortButton = document.querySelector(".total-product__sort-button");
+  const trandingFilters = document.querySelector(".trending-topics__category-filters");
+  const articlesSortButton = document.querySelector(".trending-topics__data-filter-btn")
   if (header) {
     setScrollMarginTop(header);
   }
@@ -20,9 +22,12 @@ window.addEventListener("load", () => {
     e.target.classList.toggle("_active");
     menuBurger?.classList.toggle("_active");
   });
-  sortButton?.addEventListener("click", () => {
-    sortButton.classList.toggle("_ascending");
+  productsSortButton?.addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("_ascending");
   })
+  articlesSortButton?.addEventListener("click", (e) => {
+     e.currentTarget.classList.toggle("_ascending");
+  });
   if (document.querySelector(".popular__slider.swiper")) {
     const popularProductsSwiper = new Swiper(".popular__slider.swiper", {
       slidesPerView: "auto",
@@ -153,12 +158,12 @@ window.addEventListener("load", () => {
     const bannerArticleSwiper = new Swiper(".banner__articles-swiper.swiper", {
       modules: [Autoplay, Navigation, Pagination],
       loop: true,
-      speed: 1800,
-      // autoplay: {
-      //   delay: 3000,
-      //   disableOnInteraction: false,
-      //   pauseOnMouseEnter: true,
-      // },
+      speed: 2500,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
       grabCursor: true,
       pagination: {
         el: ".swiper-pagination",
@@ -170,6 +175,13 @@ window.addEventListener("load", () => {
       },
     });
   }
+ 
+  trandingFilters?.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.closest(".trending-topics__category-filter-btn")) {
+      target.classList.toggle("_active")
+    }
+  });
   
 });
 
