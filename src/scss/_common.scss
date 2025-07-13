@@ -679,6 +679,8 @@
         flex-shrink: 0;
         width: 28px;
         height: 28px;
+        aspect-ratio: 28 / 28;
+        object-fit: cover;
         border-radius: 50%;
         @media (max-width: $mobile) {
             width: 18px;

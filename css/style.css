@@ -827,6 +827,9 @@ input[type=number] {
       flex-shrink: 0;
   width: 28px;
   height: 28px;
+  aspect-ratio: 28/28;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
 }
 @media (max-width: 767.98px) {
@@ -2663,6 +2666,12 @@ input[type=number] {
 .intro--services .intro__header {
   max-width: 505px;
 }
+.intro--article-detail .intro__header {
+  max-width: 1146px;
+}
+.intro--article-detail .intro__header .section-header__text {
+  max-width: 849px;
+}
 .intro__banner {
   width: 100%;
 }
@@ -2673,7 +2682,7 @@ input[type=number] {
 .intro--products .banner {
   width: 100vw;
 }
-.intro--about .banner {
+.intro--about .banner, .intro--article-detail .banner {
   width: 100%;
   min-height: 200px;
   aspect-ratio: 1240/550;
@@ -3452,6 +3461,57 @@ input[type=number] {
 @media (max-width: 767.98px) {
   .team__list {
     row-gap: 20px;
+  }
+}
+
+.similar-topics__container {
+  padding-block: 90px;
+}
+@media (max-width: 767.98px) {
+  .similar-topics__container {
+    padding-block: 50px;
+  }
+}
+.similar-topics__header:not(:last-child) {
+  margin-bottom: 50px;
+}
+@media (max-width: 767.98px) {
+  .similar-topics__header:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+.similar-topics__collection {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(327px, 1fr));
+  grid-auto-rows: auto;
+  gap: 20px 29px;
+}
+.similar-topics__collection .article-body__text {
+  display: block;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 767.98px) {
+  .similar-topics__collection .article-body__title {
+    font-size: 14px;
+  }
+  .similar-topics__collection .article-body__text {
+    font-size: 12px;
+  }
+}
+@media (max-width: 991.98px) {
+  .similar-topics__collection {
+    gap: 20px 15px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+@media (max-width: 767.98px) {
+  .similar-topics__collection {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
