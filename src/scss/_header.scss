@@ -91,7 +91,21 @@
     // .navigation__link
 
     &__link {
-        transition: color 0.3s ease-out;
+        position: relative;
+        &._active::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: var(--scroll-margin-top);
+            border-bottom: 3px solid $primaryColor;
+            transform: translateY(calc(-50% + 0.9em));
+        }
+        &._active {
+            color: $primaryColor;
+        }
+        transition: all 0.3s ease-out;
         @media (any-hover: hover) {
             &:hover {
                 color: $primaryColor;

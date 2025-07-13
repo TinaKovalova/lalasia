@@ -1537,8 +1537,24 @@ input[type=number] {
   row-gap: 30px;
 }
 .navigation__link {
-  -webkit-transition: color 0.3s ease-out;
-  transition: color 0.3s ease-out;
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.navigation__link._active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: var(--scroll-margin-top);
+  border-bottom: 3px solid #518581;
+  -webkit-transform: translateY(calc(-50% + 0.9em));
+      -ms-transform: translateY(calc(-50% + 0.9em));
+          transform: translateY(calc(-50% + 0.9em));
+}
+.navigation__link._active {
+  color: #518581;
 }
 @media (any-hover: hover) {
   .navigation__link:hover {
