@@ -1719,3 +1719,103 @@
     &__date {
     }
 }
+
+.content {
+    // .content__body
+
+    &__body {
+        & > *:not(:last-child) {
+            margin-bottom: 50px;
+        }
+        @media (max-width: $mobile) {
+            & > *:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    //content__line
+    &__line {
+        column-count: 2;
+        column-gap: 30px;
+        & > p:first-of-type {
+            margin-bottom: 30px;
+        }
+        @media (max-width: $tablet) {
+            column-gap: 15px;
+        }
+        @media (max-width: $mobile) {
+            column-count: auto;
+        }
+    }
+
+    // .content__media
+
+    &__media {
+        aspect-ratio: 605 / 480;
+        position: relative;
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+        &--large {
+            column-span: all;
+            aspect-ratio: 1240 / 480;
+            &:not(:first-child),
+            &:not(:last-child) {
+                margin-top: 50px;
+            }
+        }
+        & > .content__media-title {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translateY(calc(100% + 10px));
+        }
+        @media (max-width: $mobile) {
+            aspect-ratio: 327 / 200;
+            &:not(:first-child) {
+                margin-top: 20px;
+            }
+            &--large {
+                &:not(:first-child),
+                &:not(:last-child) {
+                    margin-top: 30px;
+                }
+            }
+            & > .content__media-title {
+                display: none;
+            }
+        }
+    }
+
+    // .content__media-image
+
+    &__media-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // .content__title
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: $titleColor;
+        column-span: all;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 14px;
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+            & + p {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
