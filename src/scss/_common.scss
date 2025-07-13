@@ -1212,6 +1212,11 @@
         width: 100%;
         aspect-ratio: 394 / 360;
         overflow: hidden;
+        @media (any-hover: hover) {
+            &:hover .employee-card__image {
+                transform: scale(1.03);
+            }
+        }
     }
 
     // .employee-card__image
@@ -1220,6 +1225,7 @@
         min-width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.3s ease-out;
     }
 
     // .employee-card__info
@@ -1235,11 +1241,18 @@
         line-height: 1.3;
         letter-spacing: 0.26px;
         color: $titleColor;
+        transition: color 0.3s ease-out;
         &:not(:last-child) {
             margin-bottom: 6px;
         }
         @media (max-width: $mobile) {
             font-size: 14px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $secondaryColor;
+            }
         }
     }
 

@@ -1384,11 +1384,22 @@ input[type=number] {
   aspect-ratio: 394/360;
   overflow: hidden;
 }
+@media (any-hover: hover) {
+  .employee-card__image-link:hover .employee-card__image {
+    -webkit-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+}
 .employee-card__image {
   min-width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 .employee-card__name {
   font-size: 26px;
@@ -1396,6 +1407,8 @@ input[type=number] {
   line-height: 1.3;
   letter-spacing: 0.26px;
   color: #151411;
+  -webkit-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
 }
 .employee-card__name:not(:last-child) {
   margin-bottom: 6px;
@@ -1403,6 +1416,11 @@ input[type=number] {
 @media (max-width: 767.98px) {
   .employee-card__name {
     font-size: 14px;
+  }
+}
+@media (any-hover: hover) {
+  .employee-card__name:hover {
+    color: #ffb23f;
   }
 }
 @media (max-width: 767.98px) {
