@@ -339,6 +339,52 @@
         }
     }
 }
+
+.statistic {
+    display: flex;
+    // flex-wrap: wrap;
+    gap: 50px;
+    &--end {
+        align-self: flex-end;
+        justify-content: flex-end;
+    }
+    // .statistic__data
+
+    &__data {
+        & > *:not(:last-child) {
+            margin-bottom: 10px;
+        }
+      
+    }
+
+    // .statistic__data-number
+
+    &__data-number {
+        font-weight: 700;
+        line-height: 1.3;
+        color: $titleColor;
+        font-size: clamp(22px, 3.05vw, 44px);
+    }
+
+    // .our-product__data-name
+
+    &__data-name {
+        @media (max-width: $tablet) {
+            font-size: 14px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 13px;
+        }
+    }
+    @media (max-width: 1100px) {
+        gap: 20px;
+    }
+    @media (max-width: $tablet) {
+        justify-content: space-around;
+    }
+    
+}
+
 .newscard {
     position: relative;
     padding-inline: 26px;
@@ -1078,5 +1124,79 @@
         @media (max-width: $mobile) {
             font-size: 12px;
         }
+    }
+}
+.advantages {
+    & > *:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    @media (max-width: $mobile) {
+        & > *:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    // .advantages__item
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 25px;
+        @media (max-width: $mobile) {
+            column-gap: 20px;
+        }
+    }
+
+    // .advantages__icon-wrapper
+
+    &__icon-wrapper {
+        flex-shrink: 0;
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        background-color: #f9f9f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: $mobile) {
+            width: 44px;
+            height: 44px;
+        }
+    }
+
+    // .advantages__item-icon
+
+    &__item-icon {
+        width: 48.39%; /* 30/62 */
+        height: 48.39%; /* 30/62 */
+        @media (max-width: $mobile) {
+            width: 54.55%; /* 24/44 */
+            height: 54.55%; /* 24/44 */
+        }
+    }
+
+    // .advantages__item-body
+
+    &__item-body {
+    }
+
+    // .advantages__item-title
+
+    &__item-title {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0.26px;
+        color: $titleColor;
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 16px;
+        }
+    }
+
+    // .advantages__item-text
+
+    &__item-text {
     }
 }
