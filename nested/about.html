@@ -31,11 +31,16 @@
                         </div>
                     </div>
                     <div class="intro__banner banner">
-                        <video controls preload="auto" poster="/src/images/about/about-banner.jpg"
-                            class="banner__video">
+                        <video preload="auto" poster="/src/images/about/about-banner.jpg" class="banner__video">
                             <source src="/src/images/about/01.webm" type="video/webm">
                             <source src="/src/images/about/01.mp4" type="video/mp4">
                         </video>
+                        <button class="banner__video-play-button"></button>
+                        <div class="banner__video-timeline timeline">
+                            <progress class="timeline__progress-bar" max="3.52" value="1.4"></progress>
+                            <div class="timeline__current-time">01:40</div>
+                            <div class="timeline__total-time">03:52</div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -224,6 +229,7 @@
         <load src="/src/partials/footer.html" />
     </div>
     <script src="/src/js/main.js" type="module"></script>
+    <script src="/src/js/about.js" type="module"></script>
     <script src="/src/js/dynamic_adapt.js" type="module"></script>
 </body>
 
