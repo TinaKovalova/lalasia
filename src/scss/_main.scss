@@ -772,8 +772,6 @@
 
     &__banner {
         width: 100%;
-        // display: grid;
-        // grid-template-columns: 1fr minmax(auto, $maxWidthContainer) 1fr;
     }
 }
 
@@ -957,7 +955,7 @@
         }
     }
 }
-
+//video timeline
 .timeline {
     padding-block: 2.66129%; /* 33/1240 */
     padding-inline: 4.032258%; /* 50/1240 */
@@ -990,7 +988,6 @@
         }
     }
 
-   
     // .timeline__total-time
 
     &__total-time {
