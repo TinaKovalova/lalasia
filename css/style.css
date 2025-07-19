@@ -275,9 +275,9 @@ input[type=number] {
 }
 @media (any-hover: hover) {
   .product__image-link:hover .product__image {
-    -webkit-transform: scale(1.03);
-        -ms-transform: scale(1.03);
-            transform: scale(1.03);
+    -webkit-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+            transform: scale(1.02);
   }
 }
 @media (max-width: 991.98px) {
@@ -690,7 +690,7 @@ input[type=number] {
 }
 @media (any-hover: hover) {
   .article-card__image-link:hover .article-card__image {
-    scale: 1.03;
+    scale: 1.02;
   }
 }
 .article-card__image {
@@ -1397,9 +1397,9 @@ input[type=number] {
 }
 @media (any-hover: hover) {
   .employee-card__image-link:hover .employee-card__image {
-    -webkit-transform: scale(1.03);
-        -ms-transform: scale(1.03);
-            transform: scale(1.03);
+    -webkit-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+            transform: scale(1.02);
   }
 }
 .employee-card__image {
@@ -1803,7 +1803,7 @@ input[type=number] {
   opacity: 0.2;
 }
 .product-purchaise__color-list:has(.product-purchaise__color:checked) .product-purchaise__color-item:has(> .product-purchaise__color:checked) {
-  scale: 1.03;
+  scale: 1.02;
 }
 .product-purchaise__color-item {
   width: 50px;

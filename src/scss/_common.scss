@@ -128,7 +128,7 @@
         }
         @media (any-hover: hover) {
             &:hover .product__image {
-                transform: scale(1.03);
+                transform: scale(1.02);
             }
         }
         @media (max-width: $tablet) {
@@ -504,7 +504,7 @@
 
         @media (any-hover: hover) {
             &:hover .article-card__image {
-                scale: 1.03;
+                scale: 1.02;
             }
         }
     }
@@ -1172,7 +1172,7 @@
         overflow: hidden;
         @media (any-hover: hover) {
             &:hover .employee-card__image {
-                transform: scale(1.03);
+                transform: scale(1.02);
             }
         }
     }
