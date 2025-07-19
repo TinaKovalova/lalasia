@@ -83,9 +83,7 @@
         align-items: center;
         text-align: center;
     }
-    //section-header__text
-    &__text {
-    }
+
     @media (max-width: $tablet) {
         &__title {
             font-size: 36px;
@@ -200,11 +198,6 @@
         }
     }
 
-    // .product__category-link
-
-    &__category-link {
-    }
-
     // .product__title
 
     &__title {
@@ -225,11 +218,6 @@
                 margin-bottom: 4px;
             }
         }
-    }
-
-    // .product__title-link
-
-    &__title-link {
     }
 
     // .product__discription
@@ -436,11 +424,6 @@
         }
     }
 
-    // .newscard__category-link
-
-    &__category-link {
-    }
-
     // .newscard__title
 
     &__title {
@@ -574,11 +557,6 @@
         }
     }
 
-    // .article-body__category-link
-
-    &__category-link {
-    }
-
     // .article-body__title
 
     &__title {
@@ -597,15 +575,16 @@
     // .article-body__title-link
 
     &__title-link {
-        // max-width: 992px;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        line-clamp: 2;
         display: -webkit-box;
         overflow: hidden;
         text-overflow: ellipsis;
         @media (min-width: $tablet) {
             .article-card--vertical:not(.article-card--banner) & {
                 -webkit-line-clamp: 1;
+                line-clamp: 1;
             }
         }
     }
@@ -624,6 +603,7 @@
     &__text {
         // max-width: 992px;
         -webkit-line-clamp: 1;
+        line-clamp: 1;
         -webkit-box-orient: vertical;
         display: -webkit-box;
         overflow: hidden;
@@ -631,6 +611,7 @@
         margin-bottom: 16px;
         .article-card--vertical & {
             -webkit-line-clamp: 2;
+            line-clamp: 2;
         }
         @media (max-width: $mobile) {
             .article-card & {
@@ -703,6 +684,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-line-clamp: 1;
+        line-clamp: 1;
         -webkit-box-orient: vertical;
         display: -webkit-box;
         .article-body__author-info:not(.article-body__author-info--end-splitter) & {
@@ -798,12 +780,6 @@
 
             & .article-body__author-name {
                 flex-shrink: 1;
-            }
-            & .article-body__date {
-                // margin-left: 0;
-                // margin-left: auto;
-            }
-            @media (max-width: $smallMobile) {
             }
         }
     }
@@ -953,11 +929,6 @@
             grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
         }
     }
-
-    // .product-collection__pagination
-
-    &__pagination {
-    }
 }
 
 .pagination {
@@ -981,7 +952,7 @@
             mask: url("/src/images/icons/icons/arrow-right.svg") center / 100% no-repeat;
             transition: background-color 0.3s ease-out;
         }
-        &:disabled {
+        &._disabled {
             &::before {
                 background-color: $paragraphColor;
             }
@@ -991,15 +962,14 @@
             height: 32px;
         }
         @media (any-hover: hover) {
-            &:not(:disabled):hover {
+            &:not(._disabled):hover {
                 &::before {
                     background-color: $primaryColor;
                 }
             }
         }
     }
-    &__button-prev {
-    }
+
     // .pagination__button-next
 
     &__button-next {
@@ -1017,10 +987,6 @@
         justify-content: center;
     }
 
-    // .pagination__list-item
-
-    &__list-item {
-    }
     // .pagination__button
 
     &__button {
@@ -1049,7 +1015,7 @@
         }
 
         @media (any-hover: hover) {
-            &:not(:disabled):not(._active):hover {
+            &:not(._disabled):not(._active):hover {
                 border-color: $primaryColor;
                 color: $primaryColor;
             }
@@ -1174,11 +1140,6 @@
         }
     }
 
-    // .advantages__item-body
-
-    &__item-body {
-    }
-
     // .advantages__item-title
 
     &__item-title {
@@ -1193,11 +1154,6 @@
         @media (max-width: $mobile) {
             font-size: 16px;
         }
-    }
-
-    // .advantages__item-text
-
-    &__item-text {
     }
 }
 .employee-card {
@@ -1230,11 +1186,6 @@
         transition: transform 0.3s ease-out;
     }
 
-    // .employee-card__info
-
-    &__info {
-    }
-
     // .employee-card__name
 
     &__name {
@@ -1256,11 +1207,6 @@
                 color: $secondaryColor;
             }
         }
-    }
-
-    // .employee-card__name-link
-
-    &__name-link {
     }
 
     // .employee-card__position
