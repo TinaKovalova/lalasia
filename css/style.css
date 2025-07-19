@@ -2711,11 +2711,30 @@ input[type=number] {
           flex-direction: column;
 }
 .intro--about .banner {
+  aspect-ratio: 1240/550;
+}
+@media (any-hover: hover) {
+  .intro--about .banner:hover .banner__controls, .intro--about .banner:has(.banner__video._play):hover .banner__controls {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.intro--about .banner__controls {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: background-color 0.3s ease-out, visibility 0.4s ease-out, opacity 0.4s ease-out;
+  transition: background-color 0.3s ease-out, visibility 0.4s ease-out, opacity 0.4s ease-out;
 }
-.intro--about .banner::before {
+.intro--about .banner__controls::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -2728,20 +2747,16 @@ input[type=number] {
   -webkit-transition: opacity 0.4s ease-out;
   transition: opacity 0.4s ease-out;
 }
-.intro--about .banner:has(.banner__video._play)::before {
-  opacity: 0;
-}
-.intro--about .banner:has(.banner__video._play) .banner__video-play-button {
+.intro--about .banner__controls._hidden {
   visibility: hidden;
   opacity: 0;
 }
-@media (any-hover: hover) or (pointer: coarse) {
-  .intro--about .banner:hover .banner__video-play-button, .intro--about .banner:has(.banner__video._play):hover .banner__video-play-button {
-    visibility: visible;
-    opacity: 1;
-  }
-}
 .intro--about .banner__video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   aspect-ratio: 1240/550;
   -o-object-fit: cover;
      object-fit: cover;
@@ -2751,17 +2766,14 @@ input[type=number] {
   z-index: 5;
   top: 50%;
   left: 50%;
-  width: 56px;
-  height: 56px;
+  width: 4.516129%; /* 56/1240 */
+  min-width: 30px;
+  aspect-ratio: 1/1;
   border-radius: 50%;
-  background: url("/src/images/icons/play.svg") center/100% no-repeat;
+  background: url("/src/images/icons/play.svg") center/contain no-repeat;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: background-color 0.3s ease-out, visibility 0.4s ease-out, opacity 0.4s ease-out;
-  transition: background-color 0.3s ease-out, visibility 0.4s ease-out, opacity 0.4s ease-out;
 }
 @media (any-hover: hover) {
   .intro--about .banner__video-play-button:hover {
@@ -2773,10 +2785,8 @@ input[type=number] {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
+  position: relative;
+  z-index: 2;
 }
 .banner .swiper {
   position: static;
@@ -2877,8 +2887,8 @@ input[type=number] {
   }
 }
 .timeline {
-  padding-block: 33px;
-  padding-inline: 50px;
+  padding-block: 2.66129%; /* 33/1240 */
+  padding-inline: 4.032258%; /* 50/1240 */
   display: grid;
   gap: 20px;
   -webkit-box-pack: justify;
@@ -2886,6 +2896,8 @@ input[type=number] {
           justify-content: space-between;
   grid-template-columns: repeat(2, 1fr);
   color: #ffffff;
+  font-size: 16px;
+  line-height: 1;
 }
 .timeline__progress-bar {
   -webkit-appearance: none;
@@ -2895,18 +2907,33 @@ input[type=number] {
   width: 100%;
   height: 4px;
   background-color: rgba(255, 255, 255, 0.38);
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
 }
 .timeline__progress-bar[value]::-webkit-progress-bar {
   background-color: rgba(255, 255, 255, 0.38);
 }
 .timeline__progress-bar::-webkit-progress-value {
   background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
 }
 .timeline__progress-bar::-moz-progress-bar {
   background-color: rgba(255, 255, 255, 0.9);
 }
 .timeline__total-time {
   text-align: end;
+}
+@media (max-width: 767.98px) {
+  .timeline {
+    row-gap: 5px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 479.98px) {
+  .timeline {
+    font-size: 12px;
+  }
 }
 
 .total-product__container {

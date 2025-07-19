@@ -790,38 +790,64 @@
         flex-direction: column;
     }
     .intro--about & {
-        display: flex;
-        &::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: linear-gradient(180deg, rgba(21, 20, 17, 0) 44.93%, #151411 128.93%);
-            opacity: 1;
-            transition: opacity 0.4s ease-out;
-        }
+        aspect-ratio: 1240 / 550;
+
         &:has(.banner__video._play) {
-            &::before {
-                opacity: 0;
-            }
-            & .banner__video-play-button {
-                visibility: hidden;
-                opacity: 0;
-            }
+            // &::before {
+            //     opacity: 0;
+            // }
+            // & .banner__video-play-button {
+            //     visibility: hidden;
+            //     opacity: 0;
+            // }
         }
 
-        @media (any-hover: hover) or (pointer: coarse) {
-            &:hover .banner__video-play-button,
-            &:has(.banner__video._play):hover .banner__video-play-button {
+        @media (any-hover: hover) {
+            &:hover .banner__controls,
+            &:has(.banner__video._play):hover .banner__controls {
                 visibility: visible;
                 opacity: 1;
+            }
+        }
+        @media (any-hover: none) and (pointer: coarse) {
+        }
+
+        &__controls {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            visibility: visible;
+            opacity: 1;
+            transition:
+                background-color 0.3s ease-out,
+                visibility 0.4s ease-out,
+                opacity 0.4s ease-out;
+            &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: linear-gradient(180deg, rgba(21, 20, 17, 0) 44.93%, #151411 128.93%);
+                opacity: 1;
+                transition: opacity 0.4s ease-out;
+            }
+            &._hidden {
+                visibility: hidden;
+                opacity: 0;
             }
         }
         // .banner__video
 
         &__video {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
             aspect-ratio: 1240 / 550;
             object-fit: cover;
         }
@@ -833,17 +859,13 @@
             z-index: 5;
             top: 50%;
             left: 50%;
-            width: 56px;
-            height: 56px;
+            width: 4.516129%; /* 56/1240 */
+            min-width: 30px;
+            aspect-ratio: 1 / 1;
             border-radius: 50%;
-            background: url("/src/images/icons/play.svg") center / 100% no-repeat;
+            background: url("/src/images/icons/play.svg") center / contain no-repeat;
             transform: translate(-50%, -50%);
-            visibility: hidden;
-            opacity: 0;
-            transition:
-                background-color 0.3s ease-out,
-                visibility 0.4s ease-out,
-                opacity 0.4s ease-out;
+
             @media (any-hover: hover) {
                 &:hover {
                     background-color: rgba(21, 20, 17, 0.6);
@@ -856,10 +878,8 @@
         &__video-timeline {
             width: 100%;
             height: max-content;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 5;
+            position: relative;
+            z-index: 2;
         }
     }
     position: relative;
@@ -960,13 +980,15 @@
 }
 
 .timeline {
-    padding-block: 33px;
-    padding-inline: 50px;
+    padding-block: 2.66129%; /* 33/1240 */
+    padding-inline: 4.032258%; /* 50/1240 */
     display: grid;
     gap: 20px;
     justify-content: space-between;
     grid-template-columns: repeat(2, 1fr);
     color: #ffffff;
+    font-size: 16px;
+    line-height: 1;
     // .timeline__progress-bar
 
     &__progress-bar {
@@ -974,13 +996,16 @@
         grid-column: span 2;
         width: 100%;
         height: 4px;
+        background-color: rgba(255, 255, 255, 0.38);
+        transition: all 0.8s ease-out;
         &[value]::-webkit-progress-bar {
             background-color: rgba(255, 255, 255, 0.38);
         }
         &::-webkit-progress-value {
             background-color: rgba(255, 255, 255, 0.9);
+            transition: all 0.8s linear;
         }
-        background-color: rgba(255, 255, 255, 0.38);
+
         &::-moz-progress-bar {
             background-color: rgba(255, 255, 255, 0.9);
         }
@@ -995,6 +1020,14 @@
 
     &__total-time {
         text-align: end;
+    }
+    @media (max-width: $mobile) {
+        row-gap: 5px;
+        font-size: 14px;
+    }
+
+    @media (max-width: $smallMobile) {
+        font-size: 12px;
     }
 }
 
