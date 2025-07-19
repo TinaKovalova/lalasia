@@ -928,9 +928,11 @@
     &__swiper-button-prev,
     &__swiper-button-next {
         position: absolute;
-        top: 50%;
         z-index: 3;
         @extend %round-swiper-button;
+        .intro--article & {
+            top: 40.8%;
+        }
         @media (max-width: $tablet) {
             display: none;
         }
@@ -1738,91 +1740,6 @@
         @media (max-width: $mobile) {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
-    }
-}
-.section-header {
-    // .section-header__title-block
-
-    &__title-block {
-    }
-
-    // .section-header__subtitle
-
-    &__subtitle {
-    }
-
-    // .section-header__title
-
-    &__title {
-    }
-}
-
-.article-card {
-    // .article-card__image-link
-
-    &__image-link {
-    }
-
-    // .article-card__image
-
-    &__image {
-    }
-
-    // .article-card__body
-
-    &__body {
-    }
-}
-
-.article-body {
-    // .article-body__category
-
-    &__category {
-    }
-
-    // .article-body__category-link
-
-    &__category-link {
-    }
-
-    // .article-body__title
-
-    &__title {
-    }
-
-    // .article-body__title-link
-
-    &__title-link {
-    }
-
-    // .article-body__text
-
-    &__text {
-    }
-
-    // .article-body__author-info
-
-    &__author-info {
-    }
-
-    // .article-body__author-info--end-splitter
-
-    &__author-info--end-splitter {
-    }
-
-    // .article-body__avatar
-
-    &__avatar {
-    }
-
-    // .article-body__author-name
-
-    &__author-name {
-    }
-
-    // .article-body__date
-
-    &__date {
     }
 }
 
