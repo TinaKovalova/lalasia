@@ -778,6 +778,7 @@
 }
 
 .banner {
+    position: relative;
     .intro--products & {
         width: 100vw;
     }
@@ -792,37 +793,15 @@
     .intro--about & {
         aspect-ratio: 1240 / 550;
 
-        &:has(.banner__video._play) {
-            // &::before {
-            //     opacity: 0;
-            // }
-            // & .banner__video-play-button {
-            //     visibility: hidden;
-            //     opacity: 0;
-            // }
-        }
-
-        @media (any-hover: hover) {
-            &:hover .banner__controls,
-            &:has(.banner__video._play):hover .banner__controls {
-                visibility: visible;
-                opacity: 1;
-            }
-        }
-        @media (any-hover: none) and (pointer: coarse) {
-        }
-
         &__controls {
             position: relative;
             width: 100%;
             height: 100%;
             display: flex;
             align-items: flex-end;
-            visibility: visible;
             opacity: 1;
             transition:
                 background-color 0.3s ease-out,
-                visibility 0.4s ease-out,
                 opacity 0.4s ease-out;
             &::before {
                 content: "";
@@ -836,7 +815,6 @@
                 transition: opacity 0.4s ease-out;
             }
             &._hidden {
-                visibility: hidden;
                 opacity: 0;
             }
         }
@@ -881,8 +859,13 @@
             position: relative;
             z-index: 2;
         }
+        @media (any-hover: hover) {
+            &:hover .banner__controls,
+            &:has(.banner__video._play):hover .banner__controls {
+                opacity: 1;
+            }
+        }
     }
-    position: relative;
 
     // .banner__products-swiper
     & .swiper {
@@ -973,10 +956,6 @@
             aspect-ratio: 327 / 200;
         }
     }
-
-    @media (max-width: $mobile) {
-        // aspect-ratio: 327 / 200;
-    }
 }
 
 .timeline {
@@ -1011,11 +990,7 @@
         }
     }
 
-    // .timeline__current-time
-
-    &__current-time {
-    }
-
+   
     // .timeline__total-time
 
     &__total-time {

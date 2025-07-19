@@ -6,21 +6,35 @@ window.addEventListener("DOMContentLoaded", () => {
   const progress = controls?.querySelector(".timeline__progress-bar");
   const totalTime = controls?.querySelector(".timeline__total-time");
 
+  const match = matchMedia("(max-width:991.98px)").matches;
 
-  playButton?.addEventListener("click", () => {
-      video.classList.contains("_play") ? togglePause(video) : togglePlay(video);
-         console.log("click");
+  controls?.addEventListener("click", (e) => {
+    if (e.target.closest(".banner__video-play-button")) {
+        video.classList.contains("_play") ? togglePause(video) : togglePlay(video);
+        if (video.paused ) {
+            e.currentTarget.classList.remove("_hidden");
+        }
+    }   
+      if (match && video.classList.contains("_play") && video.currentTime !== video.duration) {
+        e.currentTarget.classList.toggle("_hidden");
+      };
   });
 
-  controls.addEventListener("mouseover", (e) => {
-    e.target.classList.remove("_hidden");
-  });
-  controls.addEventListener("mouseout", (e) => {
-    if (video.classList.contains("_play") && video.currentTime !== video.duration) {
-      e.target.classList.add("_hidden");
+  controls?.addEventListener("mouseover", (e) => {
+      if (!match) {
+          e.currentTarget.classList.remove("_hidden");
       }
   });
-
+   
+  controls.addEventListener("mouseout", (e) => {
+     if (!match) {
+       if (video.classList.contains("_play") && video.currentTime !== video.duration) {
+          e.currentTarget.classList.add("_hidden");
+        }
+    }   
+  });
+    
+   
   video.addEventListener("loadeddata", (e) => {
       const target = e.target;
       progress.max = target.duration;
@@ -41,25 +55,22 @@ window.addEventListener("DOMContentLoaded", () => {
     
   const leadingZeroFormatter = new Intl.NumberFormat(undefined,{minimumIntegerDigits:2})
     function formatDuration(timeInSeconds) {
-        const seconds = Math.floor(timeInSeconds % 60);
-        const minutes = Math.floor(timeInSeconds / 60);
-        const hours = Math.floor(timeInSeconds / 3600);
+      const seconds = Math.floor(timeInSeconds % 60);
+      const minutes = Math.floor(timeInSeconds / 60);
+      const hours = Math.floor(timeInSeconds / 3600);
         if (hours === 0) {
             return `${leadingZeroFormatter.format(minutes)}:${leadingZeroFormatter.format(seconds)}`;
         } else {
               return  `${leadingZeroFormatter.format(hours)}:${leadingZeroFormatter.format(minutes)}:${leadingZeroFormatter.format(seconds)}`;
-        }
+        }  
 }
  
-
   function togglePlay(video) {
     video.play();
-      video.classList.add("_play");
-      console.log("togglePlay");
+    video.classList.add("_play");
   }
   function togglePause(video) {
     video.pause();
-      video.classList.remove("_play");
-       console.log("togglePause");
+    video.classList.remove("_play");
   }
 });

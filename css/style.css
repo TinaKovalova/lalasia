@@ -2713,12 +2713,6 @@ input[type=number] {
 .intro--about .banner {
   aspect-ratio: 1240/550;
 }
-@media (any-hover: hover) {
-  .intro--about .banner:hover .banner__controls, .intro--about .banner:has(.banner__video._play):hover .banner__controls {
-    visibility: visible;
-    opacity: 1;
-  }
-}
 .intro--about .banner__controls {
   position: relative;
   width: 100%;
@@ -2729,10 +2723,9 @@ input[type=number] {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  visibility: visible;
   opacity: 1;
-  -webkit-transition: background-color 0.3s ease-out, visibility 0.4s ease-out, opacity 0.4s ease-out;
-  transition: background-color 0.3s ease-out, visibility 0.4s ease-out, opacity 0.4s ease-out;
+  -webkit-transition: background-color 0.3s ease-out, opacity 0.4s ease-out;
+  transition: background-color 0.3s ease-out, opacity 0.4s ease-out;
 }
 .intro--about .banner__controls::before {
   content: "";
@@ -2748,7 +2741,6 @@ input[type=number] {
   transition: opacity 0.4s ease-out;
 }
 .intro--about .banner__controls._hidden {
-  visibility: hidden;
   opacity: 0;
 }
 .intro--about .banner__video {
@@ -2787,6 +2779,11 @@ input[type=number] {
   height: max-content;
   position: relative;
   z-index: 2;
+}
+@media (any-hover: hover) {
+  .intro--about .banner:hover .banner__controls, .intro--about .banner:has(.banner__video._play):hover .banner__controls {
+    opacity: 1;
+  }
 }
 .banner .swiper {
   position: static;
@@ -2886,6 +2883,7 @@ input[type=number] {
     aspect-ratio: 327/200;
   }
 }
+
 .timeline {
   padding-block: 2.66129%; /* 33/1240 */
   padding-inline: 4.032258%; /* 50/1240 */
