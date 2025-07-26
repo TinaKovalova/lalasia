@@ -1549,17 +1549,23 @@ input[type=number] {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.navigation__link._active::after {
+.navigation__link::after {
   content: "";
   position: absolute;
   top: 0;
-  right: 0;
-  width: 100%;
-  height: var(--scroll-margin-top);
-  border-bottom: 3px solid #518581;
+  left: 0;
+  width: 0;
+  border-bottom: 3px solid transparent;
   -webkit-transform: translateY(calc(-50% + 0.9em));
       -ms-transform: translateY(calc(-50% + 0.9em));
           transform: translateY(calc(-50% + 0.9em));
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.navigation__link._active::after {
+  width: 100%;
+  height: var(--scroll-margin-top);
+  border-color: #518581;
 }
 @media (max-width: 991.98px) {
   .navigation__link._active::after {
