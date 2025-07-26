@@ -1,3 +1,4 @@
+// import { createCounterObserver, counterInit } from "/src/js/counter.js";
 import Swiper from "swiper";
 import { Autoplay, Navigation, EffectFade, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -6,20 +7,29 @@ import "swiper/css/effect-fade";
 import "/src/scss/style.scss";
 
 window.addEventListener("load", () => {
+  console.log("main")
   const navigation = document.querySelector(".navigation");
   const actions = document.querySelector(".actions");
   const menuBurger = document.querySelector(".menu-burger");
   const burgerBtn = document.querySelector(".burger-btn ");
   const header = document.querySelector(".header");
-  const productsSortButton = document.querySelector(".total-product__sort-button");
-  const trandingFilters = document.querySelector(".trending-topics__category-filters");
-  const articlesSortButton = document.querySelector(".trending-topics__data-filter-btn")
+  const productsSortButton = document.querySelector(
+    ".total-product__sort-button"
+  );
+  const trandingFilters = document.querySelector(
+    ".trending-topics__category-filters"
+  );
+  const articlesSortButton = document.querySelector(
+    ".trending-topics__data-filter-btn"
+  );
   if (header) {
     setScrollMarginTop(header);
   }
 
-  const curentPage = location.href.split("/").pop().split('.')[0];
-  const currentLink = [...navigation?.querySelectorAll(".navigation__link")].find(link =>curentPage.includes(link.dataset.tag));
+  const curentPage = location.href.split("/").pop().split(".")[0];
+  const currentLink = [
+    ...navigation?.querySelectorAll(".navigation__link"),
+  ].find((link) => curentPage.includes(link.dataset.tag));
   if (currentLink) {
     currentLink.classList.add("_active");
   }
@@ -31,7 +41,7 @@ window.addEventListener("load", () => {
   });
   productsSortButton?.addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("_ascending");
-  })
+  });
   articlesSortButton?.addEventListener("click", (e) => {
     e.currentTarget.classList.toggle("_ascending");
   });
@@ -182,15 +192,27 @@ window.addEventListener("load", () => {
       },
     });
   }
- 
+
   trandingFilters?.addEventListener("click", (e) => {
     const target = e.target;
     if (target.closest(".trending-topics__category-filter-btn")) {
-      target.classList.toggle("_active")
+      target.classList.toggle("_active");
     }
   });
 
-
+  // const statistic = document.querySelector(".statistic");
+  // createCounterObserver(statistic);
+  // if (statistic) {
+  //   console.log("observer");
+  //   const counterObserver = new IntersectionObserver(([entry]) => {
+  //     if (entry.isIntersecting) {
+  //       counterInit();
+  //              console.log("isIntersecting");
+  //     }
+  //     counterObserver.unobserve(entry.target);
+  //   }, { threshold: 0.75 });
+  //   counterObserver.observe(statistic);
+  // }
 });
 
 window.addEventListener("resize", () => {
