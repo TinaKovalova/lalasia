@@ -83,11 +83,6 @@
         }
     }
 
-    // .navigation__item
-
-    &__item {
-    }
-
     // .navigation__link
 
     &__link {
@@ -101,6 +96,9 @@
             height: var(--scroll-margin-top);
             border-bottom: 3px solid $primaryColor;
             transform: translateY(calc(-50% + 0.9em));
+            @media (max-width: $tablet) {
+                height: 100%;
+            }
         }
         &._active {
             color: $primaryColor;
@@ -172,7 +170,6 @@
     z-index: -2;
     transform: translateY(-100%);
     width: 100%;
-    // min-height: 100svh;
     padding-block-start: calc(var(--scroll-margin-top) + 50px);
     padding-block-end: 30px;
     padding-inline: 30px;

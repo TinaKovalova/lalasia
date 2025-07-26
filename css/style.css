@@ -1561,6 +1561,11 @@ input[type=number] {
       -ms-transform: translateY(calc(-50% + 0.9em));
           transform: translateY(calc(-50% + 0.9em));
 }
+@media (max-width: 991.98px) {
+  .navigation__link._active::after {
+    height: 100%;
+  }
+}
 .navigation__link._active {
   color: #518581;
 }
@@ -1911,8 +1916,7 @@ input[type=number] {
       -ms-flex-pack: center;
           justify-content: center;
   background: rgba(21, 20, 17, 0.6);
-  -webkit-backdrop-filter: blur(7.5px);
-          backdrop-filter: blur(7.5px);
+  backdrop-filter: blur(7.5px);
   position: absolute;
   z-index: 3;
   top: 50%;

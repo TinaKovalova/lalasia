@@ -2,6 +2,9 @@ import { createCounterObserver } from "/src/js/counter.js";
 import "/src/scss/style.scss";
 
 window.addEventListener("load", () => {
+
+  //heder---------------------------------------------------
+  
   const navigation = document.querySelector(".navigation");
   // const actions = document.querySelector(".actions");
   const menuBurger = document.querySelector(".menu-burger");
@@ -26,8 +29,30 @@ window.addEventListener("load", () => {
     menuBurger?.classList.toggle("_active");
   });
 
+  // sort/filter ----------------------------------
 
-  //counter
+  const productsSortButton = document.querySelector(".total-product__sort-button");
+  const trandingFilters = document.querySelector(".trending-topics__category-filters");
+  const articlesSortButton = document.querySelector(".trending-topics__data-filter-btn");    
+    
+  productsSortButton?.addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("_ascending");
+  });
+    
+  articlesSortButton?.addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("_ascending");
+  });
+
+  trandingFilters?.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.closest(".trending-topics__category-filter-btn")) {
+      target.classList.toggle("_active");
+    }
+  });
+
+
+  //counter----------------------------------------
+
   const counter = document.querySelector(".statistic");
   if(counter) createCounterObserver(counter);
   
