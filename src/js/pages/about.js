@@ -1,6 +1,4 @@
-import { createCounterObserver } from "/src/js/counter.js";
 window.addEventListener("DOMContentLoaded", () => {
-  console.log("about");
   const video = document.querySelector(".banner__video");
   const controls = document.querySelector(".banner__controls");
   const playButton = controls?.querySelector(".banner__video-play-button");
@@ -9,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const totalTime = controls?.querySelector(".timeline__total-time");
 
   const match = matchMedia("(max-width:991.98px)").matches;
-  
+
   //video-------------------
   controls?.addEventListener("click", (e) => {
     if (e.target.closest(".banner__video-play-button")) {
@@ -92,8 +90,4 @@ window.addEventListener("DOMContentLoaded", () => {
     video.pause();
     video.classList.remove("_play");
   }
-
-  //counter
-  createCounterObserver(document.querySelector(".statistic"));
-
 });
