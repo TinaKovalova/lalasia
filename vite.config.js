@@ -13,7 +13,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
+        index: resolve(__dirname, "index.html"),
         products: resolve(__dirname, "nested/products.html"),
         product_details: resolve(__dirname, "nested/product-details.html"),
         services: resolve(__dirname, "nested/services.html"),

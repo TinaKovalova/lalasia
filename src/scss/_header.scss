@@ -1,8 +1,7 @@
 @use "variables" as *;
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 100;
     width: 100%;
 
@@ -91,20 +90,19 @@
         &::after {
             content: "";
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: 0;
+            height: 100%;
             border-bottom: 3px solid transparent;
-            transform: translateY(calc(-50% + 0.9em));
+            transform: translateY(calc(85% + 0.9em));
             transition: all 0.3s ease-out;
-           
         }
         &._active::after {
             width: 100%;
-            height: var(--scroll-margin-top);
             border-color: $primaryColor;
-             @media (max-width: $tablet) {
-                height: 100%;
+            @media (max-width: $tablet) {
+                transform: translate(0);
             }
         }
         &._active {

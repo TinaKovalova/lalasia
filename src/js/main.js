@@ -6,14 +6,9 @@ window.addEventListener("load", () => {
   //heder---------------------------------------------------
   
   const navigation = document.querySelector(".navigation");
-  // const actions = document.querySelector(".actions");
   const menuBurger = document.querySelector(".menu-burger");
   const burgerBtn = document.querySelector(".burger-btn ");
-  const header = document.querySelector(".header");
 
-  if (header) {
-    setScrollMarginTop(header);
-  }
 
   const curentPage = location.href.split("/").pop().split(".")[0];
   const currentLink = [
@@ -59,16 +54,4 @@ window.addEventListener("load", () => {
 
 });
 
-window.addEventListener("resize", () => {
-  const header = document.querySelector(".header");
-  if (header) {
-    setScrollMarginTop(header);
-  }
-});
 
-function setScrollMarginTop(basedOnElement) {
-  document.documentElement.style.setProperty(
-    "--scroll-margin-top",
-    `${basedOnElement.clientHeight}px`
-  );
-}
